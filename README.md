@@ -7,7 +7,7 @@
 
 ## (1) 사용한 프롬프트 공유 링크
 
-https://claude.ai/share/YOUR-SHARE-ID
+https://claude.ai/share/acae8b63-fb5f-4321-89fd-382902e86d7f
 
 
 ## (2) 데이터 및 시각화 결과
