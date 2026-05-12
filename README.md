@@ -3,13 +3,11 @@
 **배포 사이트**: https://YOUR-APP-NAME.streamlit.app/
 **GitHub Repo**: https://github.com/YOUR-USERNAME/bcsports-dashboard
 
----
 
 ## (1) 사용한 프롬프트 공유 링크
 
 https://claude.ai/share/YOUR-SHARE-ID
 
----
 
 ## (2) 데이터 및 시각화 결과
 
@@ -28,7 +26,7 @@ https://claude.ai/share/YOUR-SHARE-ID
 ### 클린징 과정
 
 1. **인코딩 변환**: 원본이 CP949 (EUC-KR) → 명시적 디코딩
-2. **공백 제거**: `'강습방법 '`, `'OFFLINE       '`, `'남     '` 등 trailing whitespace → `.str.strip()` 적용
+2. **공백 제거**: `'강습방법'`, `'OFFLINE'`, `'남'` 등 trailing whitespace → `.str.strip()` 적용
 3. **잘못된 날짜 제거**: `'2024085'` 같은 형식 오류 → `pd.to_datetime(errors='coerce')` 후 NaT 제거
 4. **시간 형식 변환**: 입장시간 `int 2153` → `21:53` (zero-pad 후 시/분 분리)
 5. **이상값 제거**: 시(hour) ≥ 24 또는 분(minute) ≥ 60 행 제외
@@ -37,8 +35,7 @@ https://claude.ai/share/YOUR-SHARE-ID
 8. **파생변수 생성**: 연도, 월, 요일, 연월, 할인율, 유료여부, 강습기간(일)
 
 전처리 결과는 SQLite DB(`bcsports.db.gz`)로 저장. 전체 코드는 `build_db.py` 참조.
-
----
+ 
 
 ### 시각화 결과 (6개 차트)
 
@@ -47,7 +44,7 @@ https://claude.ai/share/YOUR-SHARE-ID
 - **인사이트**:
   - 2020년 9월 개관했지만 코로나로 실질 운영은 2021년 3월부터
   - 2024년 7월 19,664명으로 역대 최고치 → 안정적 성장세
-  - 매년 7~8월(수영장 성수기), 1~2월(겨울 비수기) 계절성 뚜렷
+  - 매년 7-8월(수영장 성수기), 1-2월(겨울 비수기) 계절성 뚜렷
   - 순 방문자 1,300명 수준에서 포화 → 지역 인구 침투 한계
 
 #### ② 요일 × 시간대 입장 히트맵
