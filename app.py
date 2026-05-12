@@ -10,6 +10,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from pathlib import Path
+import gzip
+import shutil
 
 st.set_page_config(
     page_title="보령국민체육센터 4년의 발자취",
@@ -17,7 +19,15 @@ st.set_page_config(
     layout="wide",
 )
 
-DB_PATH = Path(__file__).parent / "bcsports.db"
+BASE_DIR = Path(__file__).parent
+DB_PATH = BASE_DIR / "bcsports.db"
+DB_GZ_PATH = BASE_DIR / "bcsports.db.gz"
+
+# GitHub 25MB 제한 회피를 위해 DB를 gzip으로 보관.
+# 앱 첫 실행 시 DB 파일이 없으면 자동으로 압축 해제.
+if not DB_PATH.exists() and DB_GZ_PATH.exists():
+    with gzip.open(DB_GZ_PATH, "rb") as f_in, open(DB_PATH, "wb") as f_out:
+        shutil.copyfileobj(f_in, f_out)
 
 @st.cache_resource
 def get_conn():
