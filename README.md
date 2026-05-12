@@ -1,6 +1,6 @@
 # 보령국민체육센터 공공데이터 시각화 대시보드
 
-**배포 사이트**: https://YOUR-APP-NAME.streamlit.app/
+**배포 사이트**: https://bcsports-dashboard-exr949j7d2brchodiksmee.streamlit.app/
 **GitHub Repo**: https://github.com/YOUR-USERNAME/bcsports-dashboard
 
 
