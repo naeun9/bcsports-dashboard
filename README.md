@@ -1,7 +1,7 @@
 # 보령국민체육센터 공공데이터 시각화 대시보드
 
-- 🌐 **배포 사이트**: https://YOUR-APP-NAME.streamlit.app/
-- 💻 **GitHub Repo**: https://github.com/YOUR-USERNAME/bcsports-dashboard
+**배포 사이트**: https://YOUR-APP-NAME.streamlit.app/
+**GitHub Repo**: https://github.com/YOUR-USERNAME/bcsports-dashboard
 
 ---
 
@@ -13,9 +13,9 @@ https://claude.ai/share/YOUR-SHARE-ID
 
 ## (2) 데이터 및 시각화 결과
 
-### 📦 데이터
+### 데이터
 
-**출처**: 공공데이터포털 - 국민체육진흥공단 공공체육시설이용자현황 (2024-08-31 기준)
+**출처**: [공공데이터포털 - 국민체육진흥공단 공공체육시설이용자현황 (2024-08-31 기준)](https://www.data.go.kr/data/15134612/fileData.do)
 
 **3개 테이블**
 
@@ -25,7 +25,7 @@ https://claude.ai/share/YOUR-SHARE-ID
 | lessons (강습이력) | 공공체육시설이용자현황_강습이력 | 25,927 | 회원번호, 강습시작/종료일, 강습방법 |
 | applications (강좌신청정보) | 공공체육시설이용자현황_강좌신청정보 | 11,390 | 강좌신청번호, 강습비용, 할인금액, 결제금액 |
 
-### 🧹 클린징 과정
+### 클린징 과정
 
 1. **인코딩 변환**: 원본이 CP949 (EUC-KR) → 명시적 디코딩
 2. **공백 제거**: `'강습방법 '`, `'OFFLINE       '`, `'남     '` 등 trailing whitespace → `.str.strip()` 적용
@@ -40,7 +40,7 @@ https://claude.ai/share/YOUR-SHARE-ID
 
 ---
 
-### 📊 시각화 결과 (6개 차트)
+### 시각화 결과 (6개 차트)
 
 #### ① 월별 입장객 추이
 - **차트**: 막대(총 입장) + 라인(순 방문자) 이중축
